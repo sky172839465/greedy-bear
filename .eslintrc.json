@@ -1,0 +1,20 @@
+{
+	"extends": [
+		"airbnb",
+		"airbnb/hooks"
+	],
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"no-console": "off",
+		"semi": [2, "never"],
+		"jsx-quotes": ["error", "prefer-single"]
+	},
+	"env": {
+		"browser": true,
+    "node": true,
+    "jasmine": true,
+		"webextensions": true
+	}
+}
