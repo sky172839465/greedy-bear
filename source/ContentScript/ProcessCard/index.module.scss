@@ -1,0 +1,10 @@
+div.collaspe {
+  width: 80%;
+  margin: 0 auto;
+
+  :global {
+    .ant-timeline-item-last {
+      padding-bottom: 0;
+    }
+  }
+}

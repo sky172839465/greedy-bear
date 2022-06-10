@@ -65,11 +65,16 @@
 
   "content_scripts": [{
     "matches": [
-      "http://*/*",
-      "https://*/*"
+      "https://e-hentai.org/*",
+      "https://exhentai.org/*",
+      "https://nhentai.net/*",
+      "https://www.wnacg.org/*"
     ],
     "js": [
       "js/contentScript.bundle.js"
+    ],
+    "css": [
+      "css/contentScript.css"
     ]
   }]
 }

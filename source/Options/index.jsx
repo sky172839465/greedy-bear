@@ -1,6 +1,14 @@
 import * as React from 'react'
-import ReactDOM from 'react-dom'
-
+import { createRoot } from 'react-dom/client'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from '../Common/Component/ErrorFallback'
 import Options from './Options'
 
-ReactDOM.render(<Options />, document.getElementById('options-root'))
+const root = createRoot(document.getElementById('options-root'))
+root.render(
+  <React.StrictMode>
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <Options />
+    </ErrorBoundary>
+  </React.StrictMode>,
+)

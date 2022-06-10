@@ -1,0 +1,55 @@
+$close-btn-color: rgba(255, 255, 255, 0.75);
+$fixed-offset: 28px;
+
+.configArea {
+  position: fixed;
+  right: $fixed-offset;
+  bottom: $fixed-offset;
+  z-index: 1;
+}
+
+.modal {
+  &.performance {
+    :global {
+      .ant-modal-content::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+      }
+    }
+  }
+
+  :global {
+    .ant-modal-content {
+      position: relative;
+      background: transparent;
+      box-shadow: none;
+      height: 90vh;
+    }
+    
+    button.ant-modal-close {
+      position: fixed;
+      right: $fixed-offset;
+      top: $fixed-offset;
+      border: 2px solid $close-btn-color;
+      color: $close-btn-color;
+      border-radius: 50%;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+      background: rgba(0,0,0, 0.3);
+
+      .ant-modal-close-x {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
+
+      &:hover {
+        border: 2px solid $close-btn-color;
+      }
+    }
+  }
+}

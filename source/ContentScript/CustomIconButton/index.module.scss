@@ -1,0 +1,19 @@
+$close-btn-color: rgba(255, 255, 255, 0.75);
+
+.customBtnArea {
+  :global {
+    button.ant-btn {
+      border: 2px solid $close-btn-color;
+      color: $close-btn-color;
+      width: 34px;
+      height: 34px;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px solid $close-btn-color;
+      }
+    }
+  }
+}
