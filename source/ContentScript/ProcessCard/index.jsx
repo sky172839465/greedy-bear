@@ -1,22 +1,23 @@
 import * as React from 'react'
 import { Collapse, Timeline, Typography } from 'antd'
 import { isUndefined } from 'lodash'
+import { useTranslation } from 'react-i18next'
 import styles from './index.module.scss'
 
 const { Panel } = Collapse
 const { Item } = Timeline
 const { Text } = Typography
 
-const processList = [
-  'Fetching image view page urls',
-  'Fetching real image urls',
-]
-
 function ProcessCard(props) {
   const {
     results = [],
     setWithOffset = () => {},
   } = props
+  const { t } = useTranslation()
+  const processList = [
+    t('processGetGalleryUrlsText'),
+    t('processGetRealImageUrlsText'),
+  ]
   const isFetchFinished = !results.some((result) => result.isLoading)
 
   const [activeKey, setActiveKey] = React.useState('fetchingData')
@@ -39,7 +40,10 @@ function ProcessCard(props) {
       bordered={false}
       accordion
     >
-      <Panel header={isFetchFinished ? 'Data fetched' : 'Fetching data'} key='fetchingData'>
+      <Panel
+        header={isFetchFinished ? t('processFinishedTitle') : t('processInitTitle')}
+        key='fetchingData'
+      >
         <Timeline pending={processList[results.findIndex((result) => result.isLoading)]}>
           {
             results.filter((result) => result.data).map((result, index) => {
@@ -61,7 +65,7 @@ function ProcessCard(props) {
           }
           {
             isFetchFinished && (
-              <Item key='done' color='green'>Done</Item>
+              <Item key='done' color='green'>{t('processFinishedText')}</Item>
             )
           }
         </Timeline>

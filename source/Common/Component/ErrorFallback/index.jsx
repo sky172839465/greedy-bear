@@ -1,11 +1,13 @@
 import * as React from 'react'
+import { useTranslation } from 'react-i18next'
 
 function ErrorFallback({ error, resetErrorBoundary }) {
+  const { t } = useTranslation()
   return (
     <div role='alert'>
-      <p>Something went wrong:</p>
+      <p>{t('errorTitle')}</p>
       <pre>{error.message}</pre>
-      <button type='button' onClick={resetErrorBoundary}>Try again</button>
+      <button type='button' onClick={resetErrorBoundary}>{t('errorRetryBtnText')}</button>
     </div>
   )
 }

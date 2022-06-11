@@ -1,0 +1,16 @@
+{
+  "errorTitle": "發生錯誤：",
+  "errorRetryBtnText": "重試",
+  "optionsModalTitle": "選項",
+  "optionsModalFormLangFieldTitle": "語言",
+  "optionsModalFormLangFieldDesc": "變更擴充功能的語言",
+  "optionsModalFormPerfFieldTitle": "效能",
+  "optionsModalFormPerfFieldDesc": "如果繪圖速度很慢這個選項可以提升效能，如果要下載圖片請關閉這個選項",
+  "optionsModalFormImgWidthFieldTitle": "圖片寬度",
+  "optionsModalFormImgWidthFieldDesc": "圖片的百分比寬度，如果設定成 50% 可以合併兩張圖片",
+  "processGetGalleryUrlsText": "取得全部圖片首頁分頁連結",
+  "processGetRealImageUrlsText": "取得全部實際的圖片連結",
+  "processFinishedTitle": "已取得資料",
+  "processInitTitle": "取得資料中",
+  "processFinishedText": "已完成"
+}

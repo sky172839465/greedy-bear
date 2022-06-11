@@ -1,0 +1,16 @@
+{
+  "errorTitle": "Something went wrong:",
+  "errorRetryBtnText": "Try again",
+  "optionsModalTitle": "Options",
+  "optionsModalFormLangFieldTitle": "Language",
+  "optionsModalFormLangFieldDesc": "Change extension language",
+  "optionsModalFormPerfFieldTitle": "Performance",
+  "optionsModalFormPerfFieldDesc": "If your image draw very slow this option can improve performance, if want to download image please turn off this option",
+  "optionsModalFormImgWidthFieldTitle": "Image Width",
+  "optionsModalFormImgWidthFieldDesc": "Image width in percent, if width less than 50% can merge multiple images",
+  "processGetGalleryUrlsText": "Fetching image gallery pagination urls",
+  "processGetRealImageUrlsText": "Fetching real image urls",
+  "processFinishedTitle": "Data fetched",
+  "processInitTitle": "Fetching data",
+  "processFinishedText": "Done"
+}

@@ -2,24 +2,37 @@ import * as React from 'react'
 import {
   Modal,
   Form,
+  Select,
   Switch,
   Slider,
 } from 'antd'
+import { useTranslation } from 'react-i18next'
+import { LANG, LANG_MAP } from '../../I18N/resources'
+
+const LANG_OPTIONS = [
+  LANG.EN,
+  LANG.ZH,
+].map((lang) => ({ value: lang, label: LANG_MAP[lang] }))
 
 function OptionsModal(props) {
   const {
     visible,
     onClose,
   } = props
+  const { t, i18n } = useTranslation()
   const form = Form.useFormInstance()
 
   const onFinish = () => {
     onClose()
   }
 
+  const onLanguageChange = (lang) => {
+    i18n.changeLanguage(lang)
+  }
+
   return (
     <Modal
-      title='Options'
+      title={t('optionsModalTitle')}
       visible={visible}
       onCancel={onClose}
       onOk={form.submit}
@@ -42,18 +55,29 @@ function OptionsModal(props) {
         autoComplete='off'
       >
         <Form.Item
-          label='Performance'
+          label={t('optionsModalFormLangFieldTitle')}
+          name='lang'
+          tooltip={t('optionsModalFormLangFieldDesc')}
+        >
+          <Select
+            onChange={onLanguageChange}
+            options={LANG_OPTIONS}
+            defaultValue={i18n.language}
+          />
+        </Form.Item>
+        <Form.Item
+          label={t('optionsModalFormPerfFieldTitle')}
           name='performance'
           valuePropName='checked'
-          tooltip='Improve draw image performance, if want to download image please turn off this feature.'
+          tooltip={t('optionsModalFormPerfFieldDesc')}
           wrapperCol={{ span: 2 }}
         >
           <Switch />
         </Form.Item>
         <Form.Item
-          label='Image width'
+          label={t('optionsModalFormImgWidthFieldTitle')}
           name='imageWidth'
-          tooltip='Image width, if width less than 50% can merge multiple images.'
+          tooltip={t('optionsModalFormImgWidthFieldDesc')}
         >
           <Slider
             min={50}

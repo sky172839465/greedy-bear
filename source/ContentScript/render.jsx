@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { ErrorBoundary } from 'react-error-boundary'
 import ErrorFallback from '../Common/Component/ErrorFallback'
 import App from './App'
+import '../I18N/init'
 
 const app = () => {
   const greedyBearRootId = 'greedyBearRoot'
