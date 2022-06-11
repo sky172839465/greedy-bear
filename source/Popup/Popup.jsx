@@ -34,7 +34,7 @@ function Popup() {
             <button
               type='button'
               onClick={() => openWebPage(
-                'https://www.buymeacoffee.com/abhijithvijayan',
+                'https://www.buymeacoffee.com/sky172839465',
               )}
             >
               Buy Me A Coffee

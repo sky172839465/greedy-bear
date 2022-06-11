@@ -43,7 +43,9 @@ function App() {
   )
 
   const scrollSensorRef = React.useRef(null)
-  const onGreedyBearClick = async () => {
+  const bodyOverflowStyle = React.useRef(document.body.style.overflow)
+  const onModalOpen = async () => {
+    console.log('onModalOpen')
     setVisible(true)
     await setTimeout(Promise.resolve, 500)
     const domContent = document.querySelector('.ant-modal-content')
@@ -58,15 +60,24 @@ function App() {
   }
 
   const onModalClose = () => {
-    document.body.style.overflow = 'auto'
     setVisible(false)
-    scrollSensorRef.current.destroy()
   }
+
+  React.useEffect(() => {
+    console.log('onModalClose')
+    if (!scrollSensorRef.current) {
+      return
+    }
+
+    document.body.style.overflow = bodyOverflowStyle.current
+    scrollSensorRef.current.destroy()
+    scrollSensorRef.current = null
+  }, [visible])
 
   return (
     <>
       <CustomIconButton
-        onClick={onGreedyBearClick}
+        onClick={onModalOpen}
         icon={SelectOutlined}
         style={{ position: 'fixed', right: '1rem', bottom: '1rem' }}
       />

@@ -1,29 +1,34 @@
-- [v] spike: how to get all gallery image
-  - nhentai
-  - e-hentai
-  - exhentai
-- [v] implement common get true image by:
-  - gallary page url
-  - image view page url
-  - true image url
-- install chakra-ui
-  - upgrade react ?
-  - overlay modal
-    - https://chakra-ui.com/docs/components/overlay/modal
-- implement main function
-  - gallery find first image
-  - fetch page text simulate user into page
-  - grab true image
-  - find next page url
-  - repeat simulate
-- ext option pannel
-  - light / dark / system mode
-  - toggle visible bear button
-- CI / CD
-  - unit test
-  - functional test ?
-  - bundle
-  - tagged version
-  - upload to github assets
-  - deploy to ext store
-  - relesae note
+<p align="center">
+  <img width=512px height=512px src="https://user-images.githubusercontent.com/9082423/173190802-bafd3781-f13d-406b-8cb5-b6bb3dcf1e2b.png" alt="Greedy Bear">
+</p>
+
+<h3 align="center">
+  Greedy Bear 🐻
+</h3>
+
+<p align="center">
+  Donate:
+  <a href="https://paypal.me/sky172839465" target='_blank'>
+    <i>
+      <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" />
+    </i>
+  </a>,
+  <a href="https://www.patreon.com/sky172839465" target='_blank'>
+    <i>
+      <img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" />
+    </i>
+  </a>,
+  <a href="https://www.buymeacoffee.com/sky172839465" target='_blank'>
+    <i>
+      <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" />
+    </i>
+  </a>
+</p>
+
+---
+
+<p align="center">
+  Greedy bear can help you improve browsing images in website get better experience!
+  <br>
+</p>
+

@@ -34,7 +34,6 @@ function VerticalViewModal(props) {
       }}
       centered
       visible={visible}
-      onOk={onClose}
       onCancel={onClose}
       width='100%'
       wrapClassName={cx(
