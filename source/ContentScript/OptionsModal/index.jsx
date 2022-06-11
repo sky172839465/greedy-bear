@@ -6,7 +6,7 @@ import {
   Slider,
 } from 'antd'
 
-function ConfigModal(props) {
+function OptionsModal(props) {
   const {
     visible,
     onClose,
@@ -19,7 +19,7 @@ function ConfigModal(props) {
 
   return (
     <Modal
-      title='Config'
+      title='Options'
       visible={visible}
       onCancel={onClose}
       onOk={form.submit}
@@ -67,4 +67,4 @@ function ConfigModal(props) {
   )
 }
 
-export default ConfigModal
+export default OptionsModal

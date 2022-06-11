@@ -3,7 +3,7 @@ import cx from 'classnames'
 import { Form, Modal } from 'antd'
 import { SettingOutlined } from '@ant-design/icons'
 import CustomIconButton from '../CustomIconButton'
-import ConfigModal from '../ConfigModal'
+import OptionsModal from '../OptionsModal'
 import FixedProcessCard from '../ProcessCard/FixedProcessCard'
 import ImageRows from '../ImageRows'
 import styles from './index.module.scss'
@@ -19,7 +19,7 @@ function VerticalViewModal(props) {
   } = props
   const { data: realImageUrls } = realImageResult
 
-  const [configModalVisible, setConfigModalVisible] = React.useState(false)
+  const [optionsModalVisible, setOptionsModalVisible] = React.useState(false)
   const [form] = Form.useForm()
   const performance = Form.useWatch('performance', form)
 
@@ -48,15 +48,15 @@ function VerticalViewModal(props) {
       <br />
       <Form form={form} initialValues={DEFAULT_VALUES}>
         <ImageRows images={realImageUrls} />
-        <ConfigModal
-          visible={configModalVisible}
-          onClose={() => setConfigModalVisible(false)}
+        <OptionsModal
+          visible={optionsModalVisible}
+          onClose={() => setOptionsModalVisible(false)}
         />
       </Form>
       <div className={styles.configArea}>
         <CustomIconButton
           icon={SettingOutlined}
-          onClick={() => setConfigModalVisible(true)}
+          onClick={() => setOptionsModalVisible(true)}
         />
       </div>
     </Modal>
