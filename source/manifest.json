@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Greedy Bear",
-  "version": "0.0.0",
+  "version": "1.0.0",
 
   "icons": {
     "16": "assets/icons/favicon-16.png",
@@ -9,9 +9,9 @@
     "48": "assets/icons/favicon-48.png",
     "128": "assets/icons/favicon-128.png"
   },
-  "description": "Sample description",
-  "homepage_url": "https://github.com/abhijithvijayan/web-extension-starter",
-  "short_name": "Sample Name",
+  "description": "Greedy bear can help you improve browsing images in website get better experience!",
+  "homepage_url": "https://github.com/sky172839465/greedy-bear",
+  "short_name": "Greedy bear",
 
   "permissions": [
     "activeTab",
@@ -22,10 +22,13 @@
 
   "content_security_policy": "script-src 'self'; object-src 'self'",
 
-  "__chrome|firefox__author": "abhijithvijayan",
+  "__chrome|firefox__author": "Yusong Hsu",
   "__opera__developer": {
-    "name": "abhijithvijayan"
+    "name": "Yusong Hsu"
   },
+
+  "__chrome__manifest_version": 3,
+  "__firefox|opera|edge__manifest_version": 2,
 
   "__firefox__applications": {
     "gecko": {
@@ -33,8 +36,14 @@
     }
   },
 
-  "__chrome__minimum_chrome_version": "49",
-  "__opera__minimum_opera_version": "36",
+  "__firefox__browser_specific_settings": {
+    "gecko": {
+      "id": "{some_id}",
+      "strict_min_version": "52.0"
+    }
+  },
+  "__chrome__minimum_chrome_version": "88",
+  "__opera__minimum_opera_version": "73",
 
   "browser_action": {
     "default_popup": "popup.html",
