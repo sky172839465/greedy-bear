@@ -58,11 +58,11 @@ function OptionsModal(props) {
           label={t('optionsModalFormLangFieldTitle')}
           name='lang'
           tooltip={t('optionsModalFormLangFieldDesc')}
+          initialValue={i18n.language}
         >
           <Select
             onChange={onLanguageChange}
             options={LANG_OPTIONS}
-            defaultValue={i18n.language}
           />
         </Form.Item>
         <Form.Item

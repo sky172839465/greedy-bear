@@ -24,7 +24,7 @@ function Popup() {
             <button
               type='button'
               onClick={() => openWebPage(
-                'https://github.com/abhijithvijayan/web-extension-starter',
+                'https://github.com/sky172839465/greedy-bear',
               )}
             >
               GitHub

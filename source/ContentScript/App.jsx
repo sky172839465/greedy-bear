@@ -10,6 +10,7 @@ import { ScrollSensor } from 'scroll-sensor'
 import { isEmpty } from 'lodash'
 import { fetchAllViewPageUrls } from '../Common/API/fetchAllViewPageUrls'
 import { fetchAllRealImageUrls } from '../Common/API/fetchAllRealImageUrls'
+import { checkIsTargetPath } from '../Common/Utils/host'
 import CustomIconButton from './CustomIconButton'
 import VerticalViewModal from './VerticalViewModal'
 import 'antd/dist/antd.css'
@@ -19,6 +20,7 @@ const queryClient = new QueryClient({ queryCache })
 
 function App() {
   const [visible, setVisible] = React.useState(false)
+  const isTargetPath = checkIsTargetPath()
 
   const viewPageResult = useQuery(
     'viewPageUrls',
@@ -45,7 +47,6 @@ function App() {
   const scrollSensorRef = React.useRef(null)
   const bodyOverflowStyle = React.useRef(document.body.style.overflow)
   const onModalOpen = async () => {
-    console.log('onModalOpen')
     setVisible(true)
     await setTimeout(Promise.resolve, 500)
     const domContent = document.querySelector('.ant-modal-content')
@@ -64,7 +65,6 @@ function App() {
   }
 
   React.useEffect(() => {
-    console.log('onModalClose')
     if (!scrollSensorRef.current) {
       return
     }
@@ -77,6 +77,7 @@ function App() {
   return (
     <>
       <CustomIconButton
+        disabled={!isTargetPath}
         onClick={onModalOpen}
         icon={SelectOutlined}
         style={{ position: 'fixed', right: '1rem', bottom: '1rem' }}

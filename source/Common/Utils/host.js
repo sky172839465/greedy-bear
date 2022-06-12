@@ -1,3 +1,8 @@
+import {
+  values,
+  isEmpty,
+} from 'lodash'
+
 export const SITE_TYPE = {
   EX_HENTAI: 'exhentai',
   E_HENTAI: 'e-hentai',
@@ -6,17 +11,17 @@ export const SITE_TYPE = {
 }
 
 export const HOST = {
-  EX_HENTAI: 'exhentai.org',
-  E_HENTAI: 'e-hentai.org',
-  N_HENTAI: 'nhentai.net',
-  WNACG: 'wnacg.org',
+  [SITE_TYPE.EX_HENTAI]: 'exhentai.org',
+  [SITE_TYPE.E_HENTAI]: 'e-hentai.org',
+  [SITE_TYPE.N_HENTAI]: 'nhentai.net',
+  [SITE_TYPE.WNACG]: 'wnacg.org',
 }
 
 export const GALLERY_PATH = {
-  EX_HENTAI: 'g',
-  E_HENTAI: 'g',
-  N_HENTAI: 'g',
-  WNACG: 'photos-index',
+  [SITE_TYPE.EX_HENTAI]: 'g',
+  [SITE_TYPE.E_HENTAI]: 'g',
+  [SITE_TYPE.N_HENTAI]: 'g',
+  [SITE_TYPE.WNACG]: 'photos-index-aid',
 }
 
 export const getSiteUrl = (urlStr) => {
@@ -29,19 +34,19 @@ export const getSiteType = (urlStr) => {
   const siteUrl = getSiteUrl(urlStr)
   let siteType
   switch (true) {
-    case new RegExp(`${HOST.EX_HENTAI}`).test(siteUrl): {
+    case new RegExp(`${HOST[SITE_TYPE.EX_HENTAI]}`).test(siteUrl): {
       siteType = SITE_TYPE.EX_HENTAI
       break
     }
-    case new RegExp(`${HOST.E_HENTAI}`).test(siteUrl): {
+    case new RegExp(`${HOST[SITE_TYPE.E_HENTAI]}`).test(siteUrl): {
       siteType = SITE_TYPE.E_HENTAI
       break
     }
-    case new RegExp(`${HOST.N_HENTAI}`).test(siteUrl): {
+    case new RegExp(`${HOST[SITE_TYPE.N_HENTAI]}`).test(siteUrl): {
       siteType = SITE_TYPE.N_HENTAI
       break
     }
-    case new RegExp(`${HOST.WNACG}`).test(siteUrl): {
+    case new RegExp(`${HOST[SITE_TYPE.WNACG]}`).test(siteUrl): {
       siteType = SITE_TYPE.WNACG
       break
     }
@@ -115,4 +120,16 @@ export const getPaginationGenerator = (galleryUrl) => {
       break
   }
   return paginationGenerator
+}
+
+export const checkIsTargetPath = () => {
+  const url = window.location.href
+  const sites = values(SITE_TYPE)
+  const getSiteRegexp = (siteType) => {
+    const siteRegexp = `${HOST[siteType]}/${GALLERY_PATH[siteType]}`
+    return siteRegexp
+  }
+  const siteRegexps = sites.map(getSiteRegexp).filter((str) => !isEmpty(str)).join('|')
+  const isTargetPath = new RegExp(siteRegexps).test(url)
+  return isTargetPath
 }
