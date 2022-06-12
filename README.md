@@ -7,6 +7,11 @@
 </h3>
 
 <p align="center">
+  Greedy bear can help you improve browsing images in website get better experience!
+  <br>
+</p>
+
+<p align="center">
   Donate:
   <a href="https://paypal.me/sky172839465" target='_blank'>
     <i>
@@ -33,8 +38,17 @@
 
 ---
 
-<p align="center">
-  Greedy bear can help you improve browsing images in website get better experience!
-  <br>
-</p>
+### Demo
+<details>
+  <summary>Open to see video demo</summary>
+  <video src="https://user-images.githubusercontent.com/9082423/173219279-888af8ff-5aed-47e6-ba6a-4a087c42b238.mp4" />
+</details>
+
+### Supported website
+  - exhentai
+  - e-hentai
+  - nhentai
+  - wnacg
+
+
 
